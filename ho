@@ -1,0 +1,25 @@
+```
+DELETE FROM users WHERE id > 1000
+DELETE FROM posts WHERE id > 10000
+DELETE FROM comments WHERE id > 100000
+UPDATE users SET del_flg = 0
+UPDATE users SET del_flg = 1 WHERE id % 50 = 0
+SELECT * FROM users WHERE account_name = ? AND del_flg = 0
+SELECT * FROM `users` WHERE `id` = ?SELECT * FROM `users` WHERE `id` = ?
+SELECT * FROM `comments` WHERE `post_id` = ? ORDER BY `created_at` DESC
+SELECT * FROM `comments` WHERE `post_id` = ? ORDER BY `created_at` DESC LIMIT 3
+SELECT * FROM `users` WHERE `id` = ?
+SELECT `id`, `user_id`, `body`, `created_at`, `mime` FROM `posts` ORDER BY `created_at` DESC
+SELECT * FROM `users` WHERE `account_name` = ? AND `del_flg` = 0
+SELECT `id`, `user_id`, `body`, `mime`, `created_at` FROM `posts` WHERE `user_id` = ? ORDER BY `created_at` DESC
+SELECT COUNT(*) AS count FROM `comments` WHERE `user_id` = ?
+SELECT `id` FROM `posts` WHERE `user_id` = ?
+SELECT COUNT(*) AS count FROM `comments` WHERE `post_id` IN (#{placeholder})"
+SELECT `id`, `user_id`, `body`, `mime`, `created_at` FROM `posts` WHERE `created_at` <= ? ORDER BY `created_at` DESC
+SELECT * FROM `posts` WHERE `id` = ?
+INSERT INTO `posts` (`user_id`, `mime`, `imgdata`, `body`) VALUES (?,?,?,?)
+SELECT * FROM `posts` WHERE `id` = ?
+INSERT INTO `comments` (`post_id`, `user_id`, `comment`) VALUES (?,?,?)
+SELECT * FROM `users` WHERE `authority` = 0 AND `del_flg` = 0 ORDER BY `created_at` DESC
+UPDATE `users` SET `del_flg` = ? WHERE `id` = ?
+

@@ -6,3 +6,12 @@ restart-nginx:
 
 alp:
 	sudo alp --sum -r -f /var/log/nginx/access.log --aggregates='/image/*,/posts/*'
+
+restart-mysql:
+	sudo systemctl restart mysql
+
+restart-app:
+	sudo systemctl restart isu-ruby
+
+percola:
+	sudo pt-query-digest --limit 10 /var/log/mysql/slow.log
