@@ -1,5 +1,5 @@
 bench:
-	/home/isucon/benchmarker/bin/benchmarker -t "localhost:80" -u ${PWD}/userdata
+	/home/isucon/benchmarker/bin/benchmarker -t "localhost:80" -u /home/isucon/benchmarker/userdata
 
 restart-nginx:
 	sudo systemctl reload nginx
