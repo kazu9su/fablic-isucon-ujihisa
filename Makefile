@@ -15,3 +15,6 @@ restart-app:
 
 percola:
 	sudo pt-query-digest --limit 10 /var/log/mysql/slow.log
+
+netdata:
+	 bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
